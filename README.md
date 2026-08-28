@@ -1,22 +1,24 @@
-# mintic-base
+# mintic
 
-Plantilla base del curso de Minería de Datos
-
-**Pineda Lab**
+**Pineda Lab**,
 **ENES Morelia, UNAM**
 
-## Sobre el proyecto
+## About
 
-`mintic-base` es el repositorio plantilla sobre el que cada alumno construirá su propia librería de Minería de Datos. El objetivo es comprender el funcionamiento interno de los algoritmos, no únicamente usarlos.
+`mintic` is the core repository for the Data Mining course. It's purpose is to familiarize students with algorithms and how they work.
 
-## Reglas del desarrollo
+## Author
+- Adrian Lara, 3rd year Data Science undergraduate.
+- **Contact:** adrianlara.jpg@gmail.com
 
-- Toda la lógica de los algoritmos debe implementarse manualmente por el alumno dentro de su subpaquete correspondiente en `mintic/`.
-- La única librería numérica permitida para los cálculos del algoritmo es **NumPy**. No está permitido usar `scikit-learn`, `scipy` u otras librerías que ya implementen el algoritmo asignado.
-- `pandas` se permite únicamente para la carga y manipulación inicial de datos (lectura de CSV, por ejemplo).
-- `matplotlib` se permite para la visualización de resultados.
+## Rules of development
 
-## Estructura del repositorio
+- Algorithm logic was manually implemented by the student under `mintic/` subpackages.
+- The only allowed library for numeric calculations is **NumPy**. The usage of `scikit-learn`, `scipy` or other libraries that already implement the assigned challenge are not allowed.
+- `pandas` is allowed only for loading and initial manipulation of data.
+- `matplotlib` is allowed for data visualization.
+
+## Repository structure
 
 ```
 .
@@ -42,29 +44,28 @@ Plantilla base del curso de Minería de Datos
         └── __init__.py
 ```
 
-Cada subcarpeta dentro de `mintic/` es un subpaquete de Python correspondiente a un reto del curso. El alumno desarrolla su implementación dentro del subpaquete que le sea asignado.
+Every subdirectory inside `mintic/` is a Python subpackage corresponding to a challenge in the course. The student must implement the solution in each one.
 
-## Clonar el repositorio
+## Installation
 
-Este es un repositorio privado. Para clonarlo, solicita acceso al equipo del curso y luego ejecuta:
-
+**Windows**
 ```bash
-git clone https://github.com/Pineda-Lab/mintic-base.git
-cd mintic-base
+python -m venv .venv
+source .venv/Scripts/Activate
+pip install -r requirements.txt
 ```
 
-## Instalación
-
+**Linux/macOS**
 ```bash
-python3 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Ejecución
+## Execution
 
 ```bash
 python main.py
 ```
 
-`main.py` carga el dataset de prueba en `data/sample_dataset.csv` y sirve como punto de partida para importar y probar el subpaquete que estés desarrollando.
+`main.py` loads the sample dataset in `data/sample_dataset.csv` and acts as a starting point to test the subpackage that's being worked on.
