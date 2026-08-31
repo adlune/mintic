@@ -1,15 +1,13 @@
 # mintic
 
-**Pineda Lab**,
-**ENES Morelia, UNAM**
+Repository for my Data Mining course at ENES Morelia, UNAM.
 
 ## About
 
-`mintic` is the core repository for the Data Mining course. It's purpose is to familiarize students with algorithms and how they work.
+This is where all my implementations for the course challenges are. Each challenge gets its own subpackage under `mintic/`.
 
-## Rules of development
+## Established rules of development
 
-- Algorithm logic was manually implemented by the student under `mintic/` subpackages.
 - The only allowed library for numeric calculations is **NumPy**. The usage of `scikit-learn`, `scipy` or other libraries that already implement the assigned challenge are not allowed.
 - `pandas` is allowed only for loading and initial manipulation of data.
 - `matplotlib` is allowed for data visualization.
@@ -22,27 +20,17 @@
 ├── README.md
 ├── requirements.txt
 ├── main.py
-├── data/
-│   └── sample_dataset.csv
-└── mintic/
-    ├── __init__.py
-    ├── eda/
-    │   └── __init__.py
-    ├── ensemble/
-    │   └── __init__.py
-    ├── kmeans/
-    │   └── __init__.py
-    ├── dbscan/
-    │   └── __init__.py
-    ├── apriori/
-    │   └── __init__.py
-    └── pca/
-        └── __init__.py
+├── data/                   # directory for datasets
+└── mintic/                 # base directory for course challenges
+    ├── eda/                # 1: exploratory data analysis
+    ├── ensemble/           # 2: ensembles
+    ├── kmeans/             # 3: k-means
+    ├── dbscan/             # 4: dbscan
+    ├── apriori/            # 5: apriori algorithm
+    └── pca/                # 6: principal component analysis
 ```
 
-Every subdirectory inside `mintic/` is a Python subpackage corresponding to a challenge in the course. The student must implement the solution in each one.
-
-## Installation
+## Setup
 
 **Windows**
 ```bash
@@ -63,9 +51,6 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
-
-`main.py` loads the sample dataset in `data/sample_dataset.csv` and acts as a starting point to test the subpackage that's being worked on.
-
 ## Author, affiliation and contact
 - Adrian Lara A. *[Undergraduate student in "Tecnologías para la Información en Ciencias" at Universidad Nacional Autónoma de México (UNAM)]*.
 - **Contact:** adrianlara.jpg@gmail.com
