@@ -7,10 +7,6 @@
 
 `mintic` is the core repository for the Data Mining course. It's purpose is to familiarize students with algorithms and how they work.
 
-## Author
-- Adrian Lara, 3rd year Data Science undergraduate.
-- **Contact:** adrianlara.jpg@gmail.com
-
 ## Rules of development
 
 - Algorithm logic was manually implemented by the student under `mintic/` subpackages.
@@ -69,3 +65,7 @@ python main.py
 ```
 
 `main.py` loads the sample dataset in `data/sample_dataset.csv` and acts as a starting point to test the subpackage that's being worked on.
+
+## Author, affiliation and contact
+- Adrian Lara A. *[Undergraduate student in "Tecnologías para la Información en Ciencias" at Universidad Nacional Autónoma de México (UNAM)]*.
+- **Contact:** adrianlara.jpg@gmail.com
