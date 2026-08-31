@@ -1,14 +1,14 @@
 import pandas as pd
 
 def impute_missing(data, strategy, columns=None):
-    i_data = data.copy()
+    imputed_data = data.copy()
 
     # this is so the columns parameter can be optional, it will just select all columns of the df
     if columns is None:
-        columns = i_data.columns
+        columns = imputed_data.columns
 
     for col in columns:
-        non_null_values = i_data[col].dropna()
+        non_null_values = imputed_data[col].dropna()
 
         if strategy == 'mean':
             imputed_values = non_null_values.sum() / len(non_null_values)
@@ -30,7 +30,7 @@ def impute_missing(data, strategy, columns=None):
             imputed_values = frequency.index[0]
 
         # lastly, we just fill the missing values with whatever strategy was chosen, with inplace to modify the df and not make a copy
-        i_data[col].fillna(imputed_values, inplace=True)
+        imputed_data[col].fillna(imputed_values, inplace=True)
 
-    return i_data
+    return imputed_data
             
