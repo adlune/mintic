@@ -14,8 +14,9 @@ def detect_outliers(data, method, threshold):
         outliers = data[(data < lower_bound) | (data > upper_bound)]
 
     elif method == 'z_score':
-        mean = data.sum() / len(data)
-        std = ((data - mean)**2).sum() / len(data)
+        non_null_data = data.dropna()
+        mean = non_null_data.sum() / len(non_null_data)
+        std = (((non_null_data - mean)**2).sum() / len(non_null_data)) ** 0.5
 
         # in the z score method the outliers are the values that are above or below a threshold of std from the mean
         z_scores = (data - mean) / std
