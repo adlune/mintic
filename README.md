@@ -4,13 +4,9 @@ Repository for my Data Mining course at ENES Morelia, UNAM.
 
 ## About
 
-This is where all my implementations for the course challenges are. Each challenge gets its own subpackage under `mintic/`.
+This is the archive for all of my implementations developed during my Data Mining course. 
 
-## Established rules of development
-
-- The only allowed library for numeric calculations is **NumPy**. The usage of `scikit-learn`, `scipy` or other libraries that already implement the assigned challenge are not allowed.
-- `pandas` is allowed only for loading and initial manipulation of data.
-- `matplotlib` is allowed for data visualization.
+Each challenge gets its own subpackage under `mintic/`.
 
 ## Repository structure
 
@@ -52,5 +48,5 @@ pip install -r requirements.txt
 python main.py
 ```
 ## Author, affiliation and contact
-- Adrian Lara A. *[Undergraduate student in "Tecnologías para la Información en Ciencias" at Universidad Nacional Autónoma de México (UNAM)]*.
-- **Contact:** adrianlara.jpg@gmail.com
+- Adrian Lara *[Undergraduate student in "Tecnologías para la Información en Ciencias" at Universidad Nacional Autónoma de México (UNAM)]*.
+- **Contact:** adrianlarasc@gmail.com
