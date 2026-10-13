@@ -49,4 +49,4 @@ python main.py
 ```
 ## Contact
 - Adrian Lara *[Undergraduate student in "Tecnologías para la Información en Ciencias" at Universidad Nacional Autónoma de México (UNAM)]*.
-- **Contact:** me@adrianlara.dev
+- **Contact:** adrianlarasc@gmail.com
