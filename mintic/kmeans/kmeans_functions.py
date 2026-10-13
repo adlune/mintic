@@ -47,3 +47,33 @@ def create_kmeans(data, n_clusters=8, max_iter=1000, tol=0.0001, randomstate=Non
             break
 
     return centroids, labels
+
+
+def kmeans_fit(kmeans, verbose=True):
+    centroids, labels = kmeans
+    if verbose:
+        print("centroids:")
+        print(centroids)
+        print("labels:")
+        print(labels)
+    return centroids, labels
+
+def inertia(kmeans, data):
+    centroids, labels = kmeans
+    inertia_value = 0.0
+
+    for i in range(len(labels)):
+        centroid = centroids[labels[i]]
+        inertia_value += euclidean_distance(centroid, data[i]) ** 2
+
+    return inertia_value
+
+def elbow(data, min=2, max=8, max_iter=1000, tol=0.001, randomstate=None):
+    inertia_values = []
+
+    for n_clusters in range(min, max + 1):
+        kmeans = create_kmeans(data, n_clusters=n_clusters, max_iter=max_iter, tol=tol, randomstate=randomstate)
+        inertia_value = inertia(kmeans, data)
+        inertia_values.append(inertia_value)
+
+    return inertia_values
