@@ -1,4 +1,5 @@
 import pandas as pd
+from mintic import eda, ensemble, kmeans
 
 DATASET_PATH = "data/"
 
