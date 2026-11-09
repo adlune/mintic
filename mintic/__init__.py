@@ -1,1 +1,1 @@
-from . import eda, ensemble, kmeans
+from . import apriori, eda, ensemble, kmeans
