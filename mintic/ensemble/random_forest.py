@@ -47,6 +47,7 @@ def predict_tree(tree, x):
 
     while isinstance(node, dict): # while node is not leaf
         value = x[node['feature']] # vakue of the feature
+        x = np.delete(x, node['feature'])
 
         if value in node['children']: # if value is in the children of the node, go to the children
             node = node['children'][value]
@@ -99,7 +100,8 @@ def build_id3_tree(X_sample, y_sample):
 
         children[value] = build_id3_tree(np.delete(X_subset, best_feature, axis=1), y_subset) # recursion, it's important to delete the feature column since we don't wanna use it again
 
-    return {'feature': best_feature, 'children': children, 'default': np.bincount(y_sample).argmax()}
+    classes, counts = np.unique(y_sample, return_counts=True)
+    return {'feature': best_feature, 'children': children, 'default': classes[np.argmax(counts)]}
 
 def build_random_forest(X, y, n_trees=10, random_state=None):
     forest = [] # to store the trees of the forest

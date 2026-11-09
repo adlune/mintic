@@ -1,7 +1,7 @@
 import pandas as pd
 from mintic import eda, ensemble, kmeans
 
-DATASET_PATH = "data/"
+DATASET_PATH = "data/sample_dataset.csv"
 
 
 def load_dataset(path: str = DATASET_PATH) -> pd.DataFrame:

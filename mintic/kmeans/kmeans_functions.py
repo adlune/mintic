@@ -29,7 +29,7 @@ def create_kmeans(data, n_clusters=8, max_iter=1000, tol=0.0001, randomstate=Non
             labels[i] = np.argmin(distances)
 
         # calculate new centroids (mean of their assigned points)
-        new_centroids = np.zeros_like(centroids)
+        new_centroids = np.zeros_like(centroids, dtype=float)
 
         for j in range(n_clusters):
             points_in_cluster = data[labels == j]
