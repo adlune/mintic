@@ -47,6 +47,5 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
-## Contact
-- Adrian Lara *[Undergraduate student in "Tecnologías para la Información en Ciencias" at Universidad Nacional Autónoma de México (UNAM)]*.
-- **Contact:** adrianlarasc@gmail.com
+## About
+Developed by Adrian Lara (contact@adrianlara.dev) for a Data Mining course, apart of the Information Technologies for Sciences major.
