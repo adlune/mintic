@@ -30,8 +30,8 @@ def impute_missing(data, strategy, columns=None):
             frequency = non_null_values.value_counts()
             imputed_values = frequency.index[0]
 
-        # lastly, we just fill the missing values with whatever strategy was chosen, with inplace to modify the df and not make a copy
-        imputed_data[col].fillna(imputed_values, inplace=True)
+        # lastly, we just fill the missing values with whatever strategy was chosen and assign the column back to the df
+        imputed_data[col] = imputed_data[col].fillna(imputed_values)
 
     return imputed_data
 
@@ -60,7 +60,8 @@ def detect_outliers(data, method, threshold):
     return outliers
 
 def handle_outliers(data, method, action, threshold):
-    handled_data = data.copy()
+    # float copy
+    handled_data = data.astype(float)
 
     if method == 'iqr':
         Q1 = data.quantile(0.25)
@@ -80,7 +81,7 @@ def handle_outliers(data, method, action, threshold):
             handled_data[handled_data < lower_bound] = lower_bound
             handled_data[handled_data > upper_bound] = upper_bound
 
-    elif method == 'zscore':
+    elif method == 'z_score':
         non_null_data = handled_data.dropna()
         mean = non_null_data.sum() / len(non_null_data)
         std = (((non_null_data - mean)**2).sum() / len(non_null_data)) ** 0.5
